@@ -1,0 +1,106 @@
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+  97% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  97% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes infopieton {
+  0% {
+    top: -35vw;
+    left: 2.5vw;
+    animation-timing-function: ease-out;
+  }
+
+  6.25% {
+    top: 12.5vw;
+    left: 2.5vw;
+    animation-timing-function: ease-in-out;
+  }
+
+  12.5% {
+    top: -4.5vw;
+    left: 2.5vw;
+    animation-timing-function: ease-in-out;
+  }
+
+  18.75% {
+    top: 5.5vw;
+    left: 2.5vw;
+    animation-timing-function: ease-in-out;
+  }
+
+  25% {
+    top: 2.5vw;
+    left: 2.5vw;
+    animation-timing-function: ease-in-out;
+  }
+
+  66% {
+    top: 2.5vw;
+    left: 2.5vw;
+    animation-timing-function: ease-in-out;
+  }
+
+  74.5% {
+    top: 2.5vw;
+    left: 5.5vw;
+    animation-timing-function: ease-in;
+  }
+
+  100% {
+    top: 2.5vw;
+    left: -50vw;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+@keyframes attentioncamion {
+  0% {
+    right: 100vw;
+  }
+  100% {
+    right: -100vw;
+  }
+}
+
+@keyframes theend {
+  0% {
+    right: 200vw;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes casse {
+  0% {
+    right: 25vw;
+  }
+  40% {
+    right: 25vw;
+  }
+  100% {
+    right: -95vw;
+  }
+}

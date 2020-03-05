@@ -1,0 +1,251 @@
+@import "animtrico.css";
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scene {
+  position: relative;
+  width: 90vw;
+  height: 40vw;
+  background: rgb(197, 197, 197);
+  perspective: 45vw;
+  overflow: hidden;
+}
+
+.signalisation {
+  position: absolute;
+  transform: rotateY(-30deg);
+  right: 25vw;
+  top: 1vw;
+}
+
+.poto {
+  position: absolute;
+  width: 2vw;
+  height: 40vw;
+  border-top-left-radius: 0.6vw;
+  border-top-right-radius: 0.8vw;
+  background: hsl(0, 0%, 41%);
+  border: 0.1vw solid hsl(0, 0%, 33%);
+  left: 3vw;
+  box-shadow: inset -0.8vw 0 1vw hsl(0, 0%, 33%),
+    inset 0.2vw 0 0.6vw hsl(0, 0%, 60%);
+}
+
+.trico {
+  position: absolute;
+  background: hsl(0, 0%, 41%);
+  border: 0.1vw solid hsl(0, 0%, 33%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  top: 1vw;
+  width: 5vw;
+  height: calc(5vw * 3);
+  border-radius: 1.2vw;
+  box-shadow: inset 1.3vw 0vw 2.2vw hsl(0, 0%, 60%), 0.8vw 0 0 hsl(0, 0%, 33%);
+}
+
+.feu {
+  width: 4vw;
+  height: 4vw;
+  border-radius: 50%;
+  border: 0.1vw solid hsl(0, 0%, 36%);
+}
+
+.feu::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 2vw hsl(0, 0%, 10%);
+}
+
+.feu::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-top: 0.8vw solid hsl(0, 0%, 33%);
+  border-top-left-radius: 40%;
+  border-top-right-radius: 40%;
+}
+
+.rouge {
+  position: absolute;
+  top: 0.5vw;
+  background: hsl(0, 100%, 20%);
+}
+
+.rouge.allume::before {
+  background: hsl(0, 100%, 50%);
+  box-shadow: inset 0 0 2vw hsl(0, 0%, 10%), 0 0.7vw 1vw hsl(0, 100%, 50%, 50%);
+  animation: fade-in-out 7s linear;
+}
+
+.orange {
+  position: absolute;
+  background: hsl(39, 100%, 20%);
+}
+
+.orange.allume::before {
+  background: hsl(39, 100%, 50%);
+  box-shadow: inset 0 0 2vw hsl(0, 0%, 10%), 0 0.7vw 1vw hsl(39, 100%, 50%, 50%);
+  animation: fade-in-out 2s linear;
+}
+
+.vert {
+  position: absolute;
+  bottom: 0.5vw;
+  background: hsl(84, 100%, 29%);
+}
+
+.vert.allume::before {
+  background: hsl(84, 100%, 59%);
+  box-shadow: inset 0 0 2vw hsl(0, 0%, 10%),
+    0 0.7vw 0.8vw hsl(84, 100%, 59%, 50%);
+  animation: fade-in-out 10s linear;
+}
+
+.vert.pieton::before {
+  background: hsl(84, 100%, 59%);
+  box-shadow: inset 0 0 2vw hsl(0, 0%, 10%),
+    0 0.7vw 0.8vw hsl(84, 100%, 59%, 50%);
+  animation: fade-out 2s linear;
+}
+
+.bouton {
+  cursor: pointer;
+  position: absolute;
+  top: 25vw;
+  left: 4.2vw;
+  width: 1.2vw;
+  height: 1.2vw;
+  border-radius: 50%;
+  background: hsl(0, 71%, 39%);
+  box-shadow: -0.3vw 0 hsl(0, 72%, 35%), -0.4vw 0 0 0.2vw hsl(0, 0%, 33%);
+}
+
+.bouton:active {
+  box-shadow: 0 0 hsl(0, 72%, 35%), -0.1vw 0 0 0.2vw hsl(0, 0%, 33%);
+  transform: translateX(-0.3vw);
+}
+
+.info.pieton {
+  position: absolute;
+  top: -35vw;
+  left: 2.5vw;
+  width: 23.14vw;
+  height: 35vw;
+  background-image: url(../img/conducteurCollère.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: infopieton 2.5s;
+}
+
+.info .message {
+  display: none;
+}
+
+.info.pieton .message {
+  display: block;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 20vw;
+  width: 30vw;
+  height: 10vw;
+  background: hsl(0, 0%, 87%);
+  border-radius: 3vw 3vw 3vw 0vw;
+  border: 0.1vw solid hsl(0, 0%, 77%);
+  justify-content: center;
+  align-items: center;
+}
+
+.info.pieton .message::after {
+  content: "";
+  position: absolute;
+  left: -4vw;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 3vw solid hsl(0, 0%, 87%);
+  border-left: 5vw solid transparent;
+}
+
+.info.pieton .message p,
+.info.pieton .message span {
+  display: block;
+  font-size: 2vw;
+  font-style: italic;
+}
+
+.info.pieton .message span {
+  font-weight: bold;
+}
+
+.camion {
+  position: absolute;
+  top: 0;
+  right: 100vw;
+  width: 90.4vw;
+  height: 45vw;
+  background-image: url(../img/camion.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.camion.oups {
+  animation: attentioncamion 1.5s linear;
+  animation-fill-mode: forwards;
+}
+
+.signalisation.oups {
+  animation: casse 1.5s linear;
+  animation-fill-mode: forwards;
+}
+
+.theend {
+  position: absolute;
+  top: 0;
+  right: 200vw;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.theend p {
+  font-size: 6.5vw;
+  letter-spacing: 1vw;
+}
+
+.theend a {
+  display: block;
+  margin-top: 3vw;
+  border: none;
+  padding: 3vw;
+  border-radius: 1.5vw;
+  font: bold 3vw Arial;
+  letter-spacing: 0.4vw;
+  color: #fff;
+  background: hsl(84, 100%, 44%);
+  text-decoration: none;
+  box-shadow: 0vw 0.3vw 0.7vw #fff;
+}
+
+.theend.oups {
+  animation: theend 1.5s linear;
+  animation-fill-mode: forwards;
+}
