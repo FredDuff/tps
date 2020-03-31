@@ -1,0 +1,88 @@
+/* GESTION DECALAGE DES ANCRES SOUS LA BARRE DE NAVIGATION */
+main::before{
+    content: '';
+    height: 56px;
+    display: block;
+}
+
+section:target {
+    padding-top: 56px; 
+    margin-top: -56px; 
+}
+
+/* MAIN */
+section>div, footer>div{
+    min-height: 33vw;
+}
+
+.carousel-item img {
+    height: 33vw;
+    object-fit: cover;
+}
+
+.service>* {
+    display: block;
+}
+
+.service img {
+    margin-top: 4.5vw;
+    object-fit: contain;
+    height: 7vw;
+}
+
+.service span {
+    margin: 1vw;
+    text-align: center;
+    font-size: 2.8vw;
+    letter-spacing: 0.34vw;
+}
+
+.service ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    list-style: none;
+}
+
+.service li {
+    margin-bottom: 0.2vw;
+    font-size: 1.7vw;
+}
+
+@media (max-width: 575.98px) {
+    .service {
+        /* border: 2px solid red; */
+        height: auto;
+        padding: 17px;
+    }
+    .service img {
+        margin-top: 0;
+        object-fit: contain;
+        height: 40px;
+    }
+    
+    .service span {
+        margin-top: 6px;
+        margin-bottom: 0px;
+        text-align: center;
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+    
+    .service ul {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        list-style: none;
+    }
+    
+    .service li {
+        margin-bottom: 1px;
+        font-size: 10px;
+    }
+}
+
+#our_team img {
+    object-fit: scale-down;
+    width: auto;
+}
