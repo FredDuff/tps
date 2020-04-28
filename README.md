@@ -1,2 +1,3 @@
-# tps
-ORT - CDA - TP - DevWeb
+# tp
+CDA TPs
+TP repertoire 

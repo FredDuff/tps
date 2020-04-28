@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Trade+Winds&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./assets/img/ld.png" type="image/png">
+    <title>Répertoire</title>
+</head>
+<body>
+    <header class="navbar">
+        <a class="navbar-brand" href="#">
+            <img src="./assets/img/ld.png" width="30px" height="30px" alt="Logo La DreamTeam"><span> Répertoire de La DreamTeam</span>
+        </a>
+        <a class="btnAddContact" href="#addContact"><span>Ajouter contact </span><i class="fas fa-user-plus"></i></a>
+    </header>
+    <main>
+
+        <section id="repertoire"></section>
+
+        <section id="addContact">
+            <form name="formAddContact" action="#" method="POST">
+                <fieldset>
+                    <legend>Nouveau contact ...</legend>
+                    <div class="mb3rem">
+                        <label class="lfn lab" for="firstname">Prénom* : </label>
+                        <input
+                        type="text"
+                        id="firstname"
+                        name="firstname"
+                        placeholder="Prénom">
+                    </div>
+                    <div class="mb3rem">
+                        <label class="lln lab" for="lastname">Nom* : </label>
+                        <input
+                            type="text"
+                            id="lastname"
+                            name="lastname"
+                            placeholder="Nom"
+                            autofocus>
+                    </div>
+                    <div class="mb3rem">
+                        <label class="lt lab" for="tel">Téléphone* : </label>
+                        <input
+                            type="tel"
+                            id="tel"
+                            name="tel"
+                            placeholder="Téléphone">
+                    </div>
+                    <div class="mb3rem">
+                        <label class="lm lab" for="mail">Courriel : </label>
+                        <input
+                            type="email"
+                            id="mail"
+                            name="mail"
+                            placeholder="Mail">
+                    </div>
+                    <div>
+                        <label class="ln lab" for="notes">Notes : </label>
+                        <textarea
+                            rows="4"
+                            id="notes"
+                            name="notes"
+                            placeholder="Notes ..." ></textarea>
+                    </div>
+                    <div>
+                        <span><small>* Champs obligatoires</small></span>
+                    </div>
+                    <div>
+                        <button type="submit">Enregistrer le contact</button>
+                        <button type="reset">Annuler</button>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+        
+    </main>
+    <script src="https://kit.fontawesome.com/ae0054abd7.js" crossorigin="anonymous"></script>
+    <script type="module" src="/js/main.js"></script>
+</body>
+</html>

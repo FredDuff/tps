@@ -1,0 +1,378 @@
+:root {
+  --light: hsl(227, 58%, 90%);
+  --dark: #343a40;
+  --blue: hsl(227, 58%, 65%);
+  --green: hsl(130, 58%, 65%);
+  --red: hsl(0, 58%, 65%);
+  --masklight05: hsla(0, 0%, 100%, 0.05);
+  --masklight50: hsla(0, 0%, 100%, 0.5);
+  --masklight75: hsla(0, 0%, 100%, 0.75);
+  --maskdark85: hsla(0, 0%, 0%, 0.85);
+}
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+Body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 3000;
+  background-color: var(--dark);
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem 1rem;
+}
+
+.navbar-brand {
+  display: inline-block;
+  color: var(--light);
+  text-decoration: none;
+  padding: .3125rem 0;
+  font-size: 1.25rem;
+}
+
+.navbar-brand img {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.navbar-brand span {
+  display: none;
+}
+
+.btnAddContact {
+  display: block;
+  color: var(--masklight50);
+}
+
+.btnAddContact:hover {
+  color: var(--masklight75);
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  background: var(--light);
+  overflow: hidden;
+}
+main::before{
+  content: '';
+  height: 56px;
+  display: block;
+}
+
+#addContact {
+  position: fixed;
+  background: var(--maskdark85);
+  top: 56px;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: calc(100% - 56px);
+  display: flex;
+  /* align-items: center; */
+}
+#addContact:target{
+  z-index: 100;
+}
+#addContact form {
+  background: var(--light);
+  width: 100%;
+  height: max-content;
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+#addContact div {
+  display: flex;
+  justify-content: center;
+}
+
+.mb3rem {
+  margin-bottom: 3rem;
+}
+
+label {
+  display: none;
+  width: 92px;
+  text-align: right;
+  margin-right: .5rem;
+}
+
+input {
+  width: 250px;
+}
+
+textarea {
+  width: 250px;
+}
+
+button {
+  margin: 0 .5rem;
+}
+
+.info {
+  width: 50%;
+  padding: 0 1rem;
+  text-align: right;
+  font-size: small;
+  color: var(--blue);
+}
+ 
+#repertoire {
+  width: 200%;
+  height: calc(100% - 56px);
+  padding: 1rem;
+  display: flex;
+  font-size: 1.8rem;
+  position: relative;
+}
+
+#repertoire.showDetail {
+  transform: translateX(-50%);
+}
+
+.listContacts {
+  width: calc(50% - 1rem);
+  background: var(--blue);
+  padding: 0 2.5rem;
+  margin-right: 1rem;
+  overflow-y: auto;
+  flex-shrink: 0;
+  box-shadow: .5px .5px 1px 0px var(--dark);
+}
+
+.listContacts div {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--light);
+  cursor: pointer;
+}
+
+.listContacts div:last-of-type {
+  border: none;
+}
+
+.listContacts p {
+  padding: 0 1rem;
+  font-family: 'Trade Winds', cursive;
+  color: var(--light);
+  margin: 0;
+  line-height: 1;
+}
+
+.listContacts p:last-of-type {
+  text-align: right;
+}
+
+.listContacts div.current,
+.listContacts div:hover{
+  background: var(--masklight05);
+}
+
+.listContacts .current p{
+  color: var(--dark);
+}
+
+.detailsContact {
+  display: flex;
+  flex-grow: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  color: var(--dark);
+  font-size: medium;
+}
+
+#labels {
+  flex-shrink: 0;
+  margin-right: 1rem;
+  text-align: right;
+}
+
+.detailsContact p {
+  margin-bottom: 2rem;
+}
+
+#datas {
+  flex-grow: 1;
+}
+
+#buttons {
+  position: absolute;
+  right: 1rem;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease-out;
+  transform-origin: center;
+}
+
+#buttons>div {
+  position: absolute;
+  right: 0;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease-out;
+  transform-origin: center;
+}
+
+
+
+.flipped {
+  transform: rotateY(-180deg);
+}
+
+.btn {
+  cursor: pointer;
+  margin: 0 .25rem;
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  margin: 0 0 1rem 0;
+}
+
+.btn span {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  margin-right: 1rem;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition:transform .5s ease;
+  background: var(--light);
+}
+
+.btn:hover span {
+  width: max-content;
+  height: auto;
+  transform: scaleX(1);
+  transition:transform .5s ease;
+}
+
+.backToList {
+  color: var(--blue);
+}
+
+.delete {
+  color: var(--red);
+}
+
+.update {
+  color: var(--green);
+}
+
+.error {
+  color: var(--red);
+  position: relative;
+}
+
+.error::after {
+  content: "";
+  position: absolute;
+  top: 1.7rem;
+  left: 0rem;
+  width: 280px;
+  text-align: center;
+  font-size: .9rem;
+}
+
+.error.lfn::after {
+  content: "Le prénom est obligatoire";
+}
+
+.error.lln::after {
+  content: "Le nom est obligatoire";
+}
+
+.error.lt::after {
+  content: "Le numéro de téléphone est obligatoire (format : +33 6 12 12 12 12 12)";
+}
+
+.error.lm::after {
+  content: "L'email n'est pas valide";
+}
+
+
+@media (min-width: 576px) {
+  .navbar-brand span {
+    display: inline;
+  }
+
+  .btnAddContact span {
+    display: inline;
+  }
+
+  .info {
+    font-size: unset;
+  }
+
+  label {
+    display: block;
+  }
+
+  .listContacts p {
+    display: inline-block;
+    padding: 0 1rem;
+    width: 50%;
+  }
+
+  .listContacts p:first-of-type {
+    text-align: right;
+  }
+
+  .listContacts p:last-of-type {
+    text-align: left;
+  }
+
+  .detailsContact {
+    font-size: large;
+  }
+}
+
+@media (min-width: 768px) {
+  #repertoire {
+    width: 100%;
+  }
+
+  #repertoire.showDetail {
+    transform: translateX(0);
+  }
+
+  .info {
+    width: 100%;
+    padding: 0;
+  }
+
+  .listContacts {
+    width: 330px;
+  }
+  
+  .listContacts p {
+    display: block;
+    width: 100%;
+  }
+  
+  .listContacts p:first-of-type {
+    text-align: left;
+  }
+
+  .listContacts p:last-of-type {
+    text-align: right;
+  }
+
+  .detailsContact {
+    font-size: smaller;
+  }
+
+  .backToList {
+    display: none;
+  }
+}
